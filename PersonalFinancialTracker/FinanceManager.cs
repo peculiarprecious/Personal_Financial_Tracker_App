@@ -35,8 +35,8 @@ public class FinanceManager
 // Table Headers
        
 // Table Headers
-Console.WriteLine($"{"S/N",-4} | {"Date",-11} | {"Type",-10} | {"Description",-25} | {"Category",-15} | {"Amount (£)",12}");
-Console.WriteLine(new string('-', 95));
+Console.WriteLine($"{"S/N",-4} | {"Date & Time",-17} | {"Type",-10} | {"Description",-35} | {"Category",-15} | {"Amount (£)",12}");
+Console.WriteLine(new string('-', 111));
 
 
 
@@ -44,7 +44,7 @@ Console.WriteLine(new string('-', 95));
         
         {
              string typeLabel = t.IsIncome  ? "Income" : "Expense";
-            Console.WriteLine($"{t.Id,-4} | {t.Date,-11:dd MMM yyyy} | {typeLabel,-10} | {t.Description,-25} | {t.Category,-15} | {t.Amount,12:C}");
+            Console.WriteLine($"{t.Id,-4} | {t.Date,-17:dd MMM yyyy HH:mm} | {typeLabel,-10} | {t.Description,-35} | {t.Category,-15} | {t.Amount,12:C}");
         }
     }
 }
