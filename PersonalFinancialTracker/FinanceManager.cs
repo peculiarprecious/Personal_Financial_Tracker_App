@@ -23,7 +23,28 @@ public class FinanceManager
         string msg = "Hello! Welcome to your personal financial tracker app.";
 
         Console.WriteLine(msg);
+    }
 
-        Console.WriteLine(new string('-', 120));
+    public void DisplayFinaces()
+    {
+        if (_transactions.Count == 0)
+        {
+            Console.WriteLine("No record has been added yet!");
+            return;
+        }
+// Table Headers
+       
+// Table Headers
+Console.WriteLine($"{"S/N",-4} | {"Date",-11} | {"Type",-10} | {"Description",-25} | {"Category",-15} | {"Amount (£)",12}");
+Console.WriteLine(new string('-', 95));
+
+
+
+        foreach (var t in _transactions)
+        
+        {
+             string typeLabel = t.IsIncome  ? "Income" : "Expense";
+            Console.WriteLine($"{t.Id,-4} | {t.Date,-11:dd MMM yyyy} | {typeLabel,-10} | {t.Description,-25} | {t.Category,-15} | {t.Amount,12:C}");
+        }
     }
 }

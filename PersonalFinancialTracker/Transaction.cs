@@ -7,7 +7,7 @@ namespace PersonalFinancialTracker;
 {
     private static int _idCounter = 1;
     public int Id {get; set;}
-    public required string Description {get; set;}
+    public  string Description {get; set;}
     private decimal _amount ;
     public string Category {get; set;} = "General";
     public bool IsIncome {get; set;} // True = Money In; False = Money out
