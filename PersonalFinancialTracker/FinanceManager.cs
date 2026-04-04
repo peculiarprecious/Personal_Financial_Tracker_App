@@ -40,8 +40,8 @@ public class FinanceManager
 // Table Headers
        
 // Table Headers
-Console.WriteLine($"{"S/N",-4} | {"Date & Time",-17} | {"Type",-10} | {"Description",-35} | {"Category",-15} | {"Amount (£)",12}");
-Console.WriteLine(new string('-', 111));
+Console.WriteLine($"{"S/N",-4} | {"Date & Time",-17} | {"Type",-10} | {"Description",-40} | {"Category",-15} | {"Amount (£)",12}");
+Console.WriteLine(new string('-', 116));
 
 
 
