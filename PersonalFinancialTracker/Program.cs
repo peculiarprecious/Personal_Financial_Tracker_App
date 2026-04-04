@@ -35,7 +35,23 @@ public class Program
                     // Display transaction
                     myFinance.DisplayFinaces();
                     break;
-                case 6:
+                    case 3:
+                   //Current Balance
+                    Console.WriteLine($"Current Balance:   { myFinance.GetCurrentBal(),12:C}");
+                    break;
+                    case 4:
+                   //Income
+                    Console.WriteLine($"Total Income:   { myFinance.GetAllIncome(),12:C}");
+                    break;
+                     case 5:
+                   //Expense
+                    Console.WriteLine($"Total Expense:   { myFinance.GetAllExpense(),12:C}");
+                    break;
+                    case 6:
+                   //Display Summary
+                    myFinance.DisplaySummary();
+                    break;
+                case 7:
                     isActiveMenu = false;
                     Console.WriteLine("Exiting program...");
                     break;
@@ -53,10 +69,11 @@ public class Program
     {
         Console.WriteLine("1.  Add New Transaction");
         Console.WriteLine("2.  View All Transaction");
-        Console.WriteLine("3.  Display Income");
-        Console.WriteLine("4.  Display Expenses");
-        Console.WriteLine("5.  Display Summary");
-        Console.WriteLine("6. Exit");
+        Console.WriteLine("3.  Display Current Balance");
+        Console.WriteLine("4.  Display Income");
+        Console.WriteLine("5.  Display Expenses");
+        Console.WriteLine("6.  Display Summary");
+        Console.WriteLine("7. Exit");
         Console.Write("\nEnter choice: ");
     }
 

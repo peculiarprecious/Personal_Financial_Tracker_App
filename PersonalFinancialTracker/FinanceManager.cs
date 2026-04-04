@@ -47,4 +47,45 @@ Console.WriteLine(new string('-', 111));
             Console.WriteLine($"{t.Id,-4} | {t.Date,-17:dd MMM yyyy HH:mm} | {typeLabel,-10} | {t.Description,-35} | {t.Category,-15} | {t.Amount,12:C}");
         }
     }
+
+public decimal GetCurrentBal()
+    {
+        decimal income;
+        decimal expense;
+
+        if (_transactions == null)
+        {
+            Console.WriteLine("No record yet;");
+            return 0;
+        }
+
+        income = _transactions.Where(t=> t.IsIncome).Sum(t=>t.Amount);
+        expense = _transactions.Where(t=> !t.IsIncome).Sum(t=>t.Amount);
+
+        return income -expense;
+
+    }
+
+    public decimal GetAllIncome(){
+        if (_transactions == null)
+        {
+            return 0;
+        }
+         return _transactions.Where(t => t.IsIncome).Sum(t => t.Amount);
+    }
+     public decimal GetAllExpense(){
+        if (_transactions == null)
+        {
+            return 0;
+        }
+         return _transactions.Where(t => !t.IsIncome).Sum(t => t.Amount);
+    }
+     public void DisplaySummary()
+    {
+        Console.WriteLine($"\n--- Financial Summary ---");
+        Console.WriteLine($"Total Transactions: {_transactions.Count}");
+        Console.WriteLine($"Current Balance:   {GetCurrentBal(),12:C}");
+        Console.WriteLine($"Total Income:   {GetAllIncome(),12:C}");
+         Console.WriteLine($"Total Expense:   {GetAllExpense(),12:C}");
+    }
 }
