@@ -20,7 +20,12 @@ public class FinanceManager
 
     public void WelcomeNote()
     {
-        string msg = "Hello! Welcome to your personal financial tracker app.";
+        Console.WriteLine("Please enter your name:");
+        string? input = Console.ReadLine();
+
+        string username = !string.IsNullOrWhiteSpace(input) ?input : "Guest";
+        
+        string msg = $"Hello {username}! Welcome to your personal financial tracker app.";
 
         Console.WriteLine(msg);
     }
